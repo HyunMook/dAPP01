@@ -72,9 +72,12 @@ window.addEventListener('load', function() {
 
 function startApp() {
   simpleStorageContract = web3.eth.contract(abi);
+  console.log("simpleStorageContract>> ");console.log(simpleStorageContract);
   simpleStorage = simpleStorageContract.at(contractAddress);
+  console.log("simpleStorage>> ");console.log(simpleStorage);
   document.getElementById('contractAddr').innerHTML = getLink(contractAddress);
   web3.eth.getAccounts(function(e,r){
+  console.log("getAccounts>> ");console.log(r);
     document.getElementById('accountAddr').innerHTML = getLink(r[0]);
   });
 
